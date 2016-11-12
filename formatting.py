@@ -17,7 +17,8 @@ def formatInfo(string):
 
 	return height, weight, skm, pbf
 
-def calculate
+def calculatePDJ(skm, w, bdf):
+	return ((skm / weight) * 100) - bdf
 
 def askInfo(name):
 	print "\nUser >> %s" % name
