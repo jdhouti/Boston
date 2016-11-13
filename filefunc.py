@@ -32,3 +32,15 @@ def line_count(fname):                          # counts the amount of lines in 
             pass                                # since c is updated regardless, nothing needs to happen here.
 
     return c + 1
+
+# not finished
+def getAverage(name):
+    fname = name + "DATA.txt"
+    line_count(fname)
+
+    with open(fname, 'r') as f:
+        i = 0
+        avg = 0
+
+        while i < line_count:
+            line = f.readlines()
