@@ -21,8 +21,14 @@ def write_file(a, b, c, d, name):
                 myfile.write(string)                      #adds the given numbers to the file
 
                 break
-
         else:
             create_file(name)
-            
+
             continue
+
+def line_count(fname):                          # counts the amount of lines in file
+    with open(fname) as filename:               # temporarily renames the given file to filename.
+        for c, i in enumerate(filename):        # enumerate will go through every line and add 1 to c starting at 0
+            pass                                # since c is updated regardless, nothing needs to happen here.
+
+    return c + 1
