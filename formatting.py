@@ -3,10 +3,14 @@
 # Started 11/11/2016
 # This script just takes the input from the user and converts it.
 
-import os
+import os	# not yet needed
+import filefunc
+from sys import argv
 
 #def cls():
 #    os.system('cls' if os.name=='nt' else 'clear') # checks which os is running
+
+#sscript, filename = argv
 
 def formatInfo(string):
 	listInfo = string.split(', ')
@@ -40,6 +44,13 @@ print "Information >> height, weight, skm, pbf"
 print "Do not include units. Please include commas."
 
 u1Height, u1Weight, u1Skm, u1pbf = askInfo("Jesse")
-u2Height, u2Weight, u2Skm, u2pbf = askInfo("Charlie")
-u3Height, u3Weight, u3Skm, u3pbf = askInfo("Colin")
-u4Height, u4Weight, u4Skm, u4pbf = askInfo("Brian")
+#u2Height, u2Weight, u2Skm, u2pbf = askInfo("Charlie")
+#u3Height, u3Weight, u3Skm, u3pbf = askInfo("Colin")
+#u4Height, u4Weight, u4Skm, u4pbf = askInfo("Brian")
+
+if filefunc.file_exists():
+	filefunc.write_file(u1Height, u1Weight, u1Skm, u1pbf)
+
+else:
+	filefunc.create_file()
+	filefunc.write_file(u1Height, u1Weight, u1Skm, u1pbf)
