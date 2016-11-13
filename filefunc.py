@@ -38,11 +38,11 @@ def getAverage(name):
     lineCount = line_count(fname)
 
     with open(fname, 'r') as f:
-        i, avg = 2, 0
-        lines = f.readlines()
+        i, avg = 2, 0                           # starts the average at 0. i starts at 2 to skip the first two info lines
+        lines = f.readlines()                   # creates a list. Each element in this list is a line from the .txt file.
 
-        while i < lineCount:
-            avg += float(lines[i][-11:-1])
-            i += 1
+        while i < lineCount:                    # iterates until it has reached the last line in the file
+            avg += float(lines[i][-11:-1])      # since lines is a list, line 3 is indicated as lines[2].
+            i += 1                              # i increments by one so it can go to the next line.
 
     return avg / (lineCount - 2)
