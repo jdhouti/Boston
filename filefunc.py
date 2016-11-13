@@ -9,7 +9,7 @@ def create_file(name):
     filename = name + "DATA.txt"                  #Creates the file.
     target = open(filename, "w")
     target.write("# Please do not edit anything this file!\n")
-    target.write("# height weight skm pbf")
+    target.write("# height weight skm pbf\n")
 
 def write_file(a, b, c, d, name):
     filename = name + "DATA.txt"
@@ -17,7 +17,7 @@ def write_file(a, b, c, d, name):
     while True:
         if exists(filename):
             with open(filename, "a") as myfile:           #temporarily renames file to myfile
-                string = "\n%s %s %s %s" % (a, b, c, d)
+                string = "%s %s %s %s\n" % (a, b, c, d)
                 myfile.write(string)                      #adds the given numbers to the file
 
                 break
@@ -33,14 +33,16 @@ def line_count(fname):                          # counts the amount of lines in 
 
     return c + 1
 
-# not finished
 def getAverage(name):
     fname = name + "DATA.txt"
-    line_count(fname)
+    lineCount = line_count(fname)
 
     with open(fname, 'r') as f:
-        i = 0
-        avg = 0
+        i, avg = 2, 0
+        lines = f.readlines()
 
-        while i < line_count:
-            line = f.readlines()
+        while i < lineCount:
+            avg += float(lines[i][-11:-1])
+            i += 1
+
+    return avg / (lineCount - 2)
