@@ -36,4 +36,4 @@ def askInfo(name):
 			print "Input error!\n"
 			continue
 
-	return height, weight, skm, pbf
+	return height, weight, skm, pbf	
