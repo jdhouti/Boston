@@ -1,3 +1,7 @@
 # Please do not edit anything this file!
 # height weight skm pbf
 1.0 2.0 3.0 4.0
+1.0 2.0 3.0 4.00000000
+1.0 2.0 3.0 4.9800000
+1.0 2.0 3.0 19.4000000
+1.0 2.0 3.0 4.00000000
