@@ -44,13 +44,13 @@ print "Information >> height, weight, skm, pbf"
 print "Do not include units. Please include commas."
 
 u1Height, u1Weight, u1Skm, u1pbf = askInfo("Jesse")
-#u2Height, u2Weight, u2Skm, u2pbf = askInfo("Charlie")
-#u3Height, u3Weight, u3Skm, u3pbf = askInfo("Colin")
-#u4Height, u4Weight, u4Skm, u4pbf = askInfo("Brian")
+filefunc.write_file(u1Height, u1Weight, u1Skm, u1pbf, "Jesse")
 
-if filefunc.file_exists():
-	filefunc.write_file(u1Height, u1Weight, u1Skm, u1pbf)
+u2Height, u2Weight, u2Skm, u2pbf = askInfo("Charlie")
+filefunc.write_file(u2Height, u2Weight, u2Skm, u2pbf, "Charlie")
 
-else:
-	filefunc.create_file()
-	filefunc.write_file(u1Height, u1Weight, u1Skm, u1pbf)
+u3Height, u3Weight, u3Skm, u3pbf = askInfo("Colin")
+filefunc.write_file(u3Height, u3Weight, u3Skm, u3pbf, "Colin")
+
+u4Height, u4Weight, u4Skm, u4pbf = askInfo("Brian")
+filefunc.write_file(u4Height, u4Weight, u4Skm, u4pbf, "Brian")
