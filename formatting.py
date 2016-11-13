@@ -11,7 +11,7 @@ def formatInfo(string):
 	height = float(listInfo[0])
 	weight = float(listInfo[1])
 	skm = float(listInfo[2])
-	pbf = float(listInfo[3])
+	pbf = format_decimal(float(listInfo[3]))
 
 	return height, weight, skm, pbf
 
@@ -33,6 +33,6 @@ def askInfo(name):
 	return height, weight, skm, pbf
 
 def format_decimal(n):
-	value = 10 - (len(str(n))) + 1
-
-	return format(n, '.' + value + 'f')
+	value = 10 - (len(str(float(n)))) + 1			# figures out how many decimals I want after a number
+													# in order to have the same number of digits in all processed numbers.
+	return format(n, '.' + str(value) + 'f')
