@@ -3,14 +3,8 @@
 # Started 11/11/2016
 # This script just takes the input from the user and converts it.
 
-import os	# not yet needed
 import filefunc
 from sys import argv
-
-#def cls():
-#    os.system('cls' if os.name=='nt' else 'clear') # checks which os is running
-
-#sscript, filename = argv
 
 def formatInfo(string):
 	listInfo = string.split(', ')
@@ -36,4 +30,9 @@ def askInfo(name):
 			print "Input error!\n"
 			continue
 
-	return height, weight, skm, pbf	
+	return height, weight, skm, pbf
+
+def format_decimal(n):
+	value = 10 - (len(str(n))) + 1
+
+	return format(n, '.' + value + 'f')
