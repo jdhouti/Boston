@@ -14,7 +14,15 @@ def create_file(name):
 def write_file(a, b, c, d, name):
     filename = name + "DATA.txt"
 
-    if exists(filename):
-        with open(filename, "a") as myfile:         #temporarily renames file to myfile
-            string = "\n%s %s %s %s" % (a, b, c, d)
-            myfile.write(string)                      #adds the given numbers to the file
+    while True:
+        if exists(filename):
+            with open(filename, "a") as myfile:           #temporarily renames file to myfile
+                string = "\n%s %s %s %s" % (a, b, c, d)
+                myfile.write(string)                      #adds the given numbers to the file
+
+                break
+
+        else:
+            create_file(name)
+            
+            continue
