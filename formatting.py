@@ -33,6 +33,11 @@ def askInfo(name):
 	return height, weight, skm, pbf
 
 def format_decimal(n):
-	value = 10 - (len(str(float(n)))) + 1			# figures out how many decimals I want after a number
-													# in order to have the same number of digits in all processed numbers.
-	return format(n, '.' + str(value) + 'f')
+	n = str(float(n))
+	i = len(n)
+
+	while i <= 10:
+		n = n + '0'
+		i += 1
+
+	return n
