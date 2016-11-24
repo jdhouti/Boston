@@ -11,14 +11,14 @@ print "Enter the information for each user like the following..."
 print "Information >> height, weight, skm, pbf"
 print "Do not include units. Please include commas."
 
-u1Height, u1Weight, u1Skm, u1pbf = formatting.askInfo("Jesse")
-filefunc.write_file(u1Height, u1Weight, u1Skm, u1pbf, "Jesse")
+jesseDictInfo = formatting.askInfo("Jesse")
+filefunc.write_file(jesseDictInfo)              # gives it a dictionary
 
-u2Height, u2Weight, u2Skm, u2pbf = formatting.askInfo("Charlie")
-filefunc.write_file(u2Height, u2Weight, u2Skm, u2pbf, "Charlie")
+charlieDictInfo = formatting.askInfo("Charlie")
+filefunc.write_file(charlieDictInfo)
 
-u3Height, u3Weight, u3Skm, u3pbf = formatting.askInfo("Colin")
-filefunc.write_file(u3Height, u3Weight, u3Skm, u3pbf, "Colin")
+colinDictInfo = formatting.askInfo("Colin")
+filefunc.write_file(colinDictInfo)
 
-u4Height, u4Weight, u4Skm, u4pbf = formatting.askInfo("Brian")
-filefunc.write_file(u4Height, u4Weight, u4Skm, u4pbf, "Brian")
+brianDictInfo = formatting.askInfo("Brian")
+filefunc.write_file(brianDictInfo)
