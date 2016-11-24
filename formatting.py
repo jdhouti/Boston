@@ -5,15 +5,17 @@
 
 import filefunc
 from sys import argv
+import time
 
 def formatInfo(string):
+	date = str(time.strftime("%H:%M:%S"))
 	listInfo = string.split(', ')
 	height = float(listInfo[0])
 	weight = float(listInfo[1])
 	skm = float(listInfo[2])
-	pbf = format_decimal(float(listInfo[3]))
+	pbf = float(listInfo[3])
 
-	return height, weight, skm, pbf
+	return date, height, weight, skm, pbf
 
 def calculatePDJ(skm, w, bdf):
 	return ((skm / weight) * 100) - bdf
@@ -23,15 +25,16 @@ def askInfo(name):
 	while True:
 		try:
 			info = raw_input("Information >> ")
-			height, weight, skm, pbf = formatInfo(info)
-			break
+			date, height, weight, skm, pbf = formatInfo(info)	# feeds info to formatInfo and assigns
+			break												# all of the returns variables to those variables
 
 		except:
 			print "Input error!\n"
 			continue
 
-	return height, weight, skm, pbf
+	return format_dictionary(date, name, height, weight, skm, pbf)		# makes a dictionary with all of that information
 
+# not used atm
 def format_decimal(n):
 	n = str(float(n))
 	i = len(n)
@@ -41,3 +44,8 @@ def format_decimal(n):
 		i += 1
 
 	return n
+
+def format_dictionary(date, name, a, b, c, d):
+	dictInfo = {'date': date,'name': name, 'height': a, 'weight': b, 'skm': c, 'pbf': d}
+
+	return dictInfo
