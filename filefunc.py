@@ -1,7 +1,10 @@
 # Julien Dhouti
 # Part of the Jesse Boston Project
 # Started 11/12/2016
-# This script just takes the input from the user and converts it.
+# This script jprovides all of the functions that manipulate the file:
+#   - creating the file
+#   - re-writing the file
+#   - other file functions such as line counting etc.
 
 from os.path import exists
 import datetime as dt
@@ -10,7 +13,7 @@ import ast
 def create_file(myDictionary):
     filename = myDictionary['name'] + "DATA.txt" # Creates the file.
     target = open(filename, "w")
-    target.write("# Please do not edit anything this file!\n")
+    target.write("# Please do not edit anything in this file!\n")
     target.write("# height weight skm pbf\n")
 
 def write_file(myDictionary):                    # this creates the file
@@ -19,7 +22,7 @@ def write_file(myDictionary):                    # this creates the file
     while True:
         if exists(filename):
             with open(filename, "a") as myfile:  # temporarily renames file to myfile
-                myfile.write("\n" + str(myDictionary))          # adds the given numbers to the file
+                myfile.write(str(myDictionary) + "\n")          # adds the given numbers to the file
             break
         else:
             create_file(myDictionary)
@@ -41,14 +44,14 @@ def get_pbf_average(name):
         lines = f.readlines()                    # creates a list. Each element in this list is a line from the .txt file.
 
         while i < lineCount:                     # iterates until it has reached the last line in the file
-            total += ast.literal_eval(lines[i])['pbf']          # since lines is a list, line 3 is indicated as lines[2].
+            total += ast.literal_eval(lines[i])['pbf']          # converts a given string into a dictionary
             i += 1                               # i increments by one so it can go to the next line.
 
     return total / (lineCount - 2)               # computes the average and returns it.
 
 # the kind must be a 'string'
 def get_a_list(name, kind):                      # beg -> the beginning of the wanted string. end -> the end
-    nlist, i = [], 3                             # i here is used iterate through the lines in the .txt files
+    nlist, i = [], 2                             # i here is used iterate through the lines in the .txt files
     fname = name + "DATA.txt"
     lineCount = line_count(fname)                # line_count counts the amount of lines in a .txt file.
 
