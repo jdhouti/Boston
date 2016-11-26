@@ -1,4 +1,3 @@
 # Please do not edit anything in this file!
 # height weight skm pbf
-{'name': 'Charlie', 'weight': 2.0, 'height': 1.0, 'skm': 3.0, 'pbf': 4.0, 'date': '22:47:35'}
-{'name': 'Charlie', 'weight': 2.0, 'height': 1.0, 'skm': 3.0, 'pbf': 4.0, 'date': '22:49:01'}
+{'name': 'Charlie', 'weight': 2.0, 'height': 1.0, 'skm': 3.0, 'pbf': 4.0, 'date': '26/16'}
